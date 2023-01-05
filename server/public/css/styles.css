@@ -1,0 +1,63 @@
+body {
+  background-color: rgb(10, 10, 20);
+}
+
+/* Headings */
+h1,
+h2 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+/* Links and text */
+p a {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+/* Header */
+header {
+  text-align: center;
+}
+
+/* Table headings */
+th {
+  font-family: "Outfit", sans-serif;
+  color: white;
+  font-weight: 600;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* Table cells */
+td {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  color: white;
+  padding: 0 10px;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* Main container */
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Single column */
+.column {
+  width: 100%;
+  padding: 25px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Multiple columns */
+.columns {
+  padding: 15px;
+}

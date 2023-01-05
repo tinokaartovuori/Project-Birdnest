@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Birdnest - Drone Monitoring Tool 1.0.0</title>
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Birdnest - Drone Monitoring Interface 1.0.0</h1>
+      </header>
+      <div class="main-container">
+        <div class="column">
+          <div class="columns col1">
+            <h2>Drone Violation Closest to the Bird's Nest</h2>
+            <table class="nearest-table">
+              <thead>
+                <tr class="table-titles">
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                  <th>Distance</th>
+                </tr>
+              </thead>
+              <tbody id="table-body-closest"></tbody>
+            </table>
+          </div>
+          <div class="columns col2">
+            <h2>Violations in Last 10 Minutes</h2>
+
+            <table class="violations-table">
+              <thead>
+                <tr class="table-titles">
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody id="table-body-violations"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
