@@ -1,6 +1,8 @@
 function updateViolationsTable() {
   // Make a GET request to the API endpoint
-  fetch("http://localhost:3001/api/violation_data/get_drone_violations")
+  fetch(
+    "https://the-project-birdnest.onrender.com/api/violation_data/get_drone_violations"
+  )
     .then((response) => response.json())
     .then((data) => {
       let violations = data;
@@ -30,7 +32,9 @@ function updateViolationsTable() {
 
 function updateClosestViolation() {
   // Make a GET request to the API endpoint
-  fetch("http://localhost:3001/api/violation_data/get_closest_violation")
+  fetch(
+    "https://the-project-birdnest.onrender.com/api/violation_data/get_closest_violation"
+  )
     .then((response) => response.json())
     .then((data) => {
       let violation = data;
