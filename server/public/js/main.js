@@ -20,7 +20,12 @@ function updateViolationsTable() {
       // Add the new data to the table
       sortedViolations.forEach((data) => {
         const row = document.createElement("tr");
+        const date = new Date(data[1].timestamp);
+        const hours = date.getHours().toString().padStart(2, "0");
+        const minutes = date.getMinutes().toString().padStart(2, "0");
+        const seconds = date.getSeconds().toString().padStart(2, "0");
         row.innerHTML = `
+        <td>${hours}:${minutes}:${seconds}</td>
         <td>${data[1].firstName} ${data[1].lastName}</td>
         <td>${data[1].phoneNumber}</td>
         <td>${data[1].email}</td>
@@ -40,7 +45,12 @@ function updateClosestViolation() {
       let violation = data;
       // Clear the current contents of the table
       const tableBody = document.querySelector("#table-body-closest");
+      const date = new Date(violation.timestamp);
+      const hours = date.getHours().toString().padStart(2, "0");
+      const minutes = date.getMinutes().toString().padStart(2, "0");
+      const seconds = date.getSeconds().toString().padStart(2, "0");
       tableBody.innerHTML = `
+        <td>${hours}:${minutes}:${seconds}</td>
         <td>${violation.firstName} ${violation.lastName}</td>
         <td>${violation.phoneNumber}</td>
         <td>${violation.email}</td>

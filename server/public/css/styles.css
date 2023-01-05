@@ -28,7 +28,6 @@ th {
   font-family: "Outfit", sans-serif;
   color: white;
   font-weight: 600;
-  min-width: 200px;
   text-align: center;
 }
 
@@ -38,7 +37,6 @@ td {
   font-weight: 400;
   color: white;
   padding: 0 10px;
-  min-width: 200px;
   text-align: center;
 }
 
