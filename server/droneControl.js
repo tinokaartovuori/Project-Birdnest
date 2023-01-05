@@ -72,14 +72,20 @@ const droneControl = {
     // it is the client's responsibility to fetch data as desired.
   },
   simplifyDrones: (dronesData) => {
-    const drones = dronesData.report.capture[0].drone;
-    return drones.map((drone) => {
-      return {
-        serial: drone.serialNumber[0],
-        x: drone.positionX[0],
-        y: drone.positionY[0],
-      };
-    });
+    try {
+      const drones = dronesData.report.capture[0].drone;
+      return drones.map((drone) => {
+        return {
+          serial: drone.serialNumber[0],
+          x: drone.positionX[0],
+          y: drone.positionY[0],
+        };
+      });
+    } catch (error) {
+      // Handle the error here
+      console.error(error);
+      return [];
+    }
   },
   getDronesInRestrictedArea: (drones, x, y, distance) => {
     const createTimestamp = () => {
