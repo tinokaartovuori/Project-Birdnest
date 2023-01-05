@@ -2,6 +2,7 @@ function updateViolationsTable() {
   // Make a GET request to the API endpoint
   fetch(
     "https://the-project-birdnest.onrender.com/api/violation_data/get_drone_violations"
+    /* "http://localhost:3001/api/violation_data/get_drone_violations" */
   )
     .then((response) => response.json())
     .then((data) => {
@@ -39,22 +40,35 @@ function updateClosestViolation() {
   // Make a GET request to the API endpoint
   fetch(
     "https://the-project-birdnest.onrender.com/api/violation_data/get_closest_violation"
+    /* "http://localhost:3001/api/violation_data/get_closest_violation" */
   )
     .then((response) => response.json())
     .then((data) => {
       let violation = data;
       // Clear the current contents of the table
-      const tableBody = document.querySelector("#table-body-closest");
+      const tableBody1 = document.querySelector("#table-body-closest1");
+      const tableBody2 = document.querySelector("#table-body-closest2");
       const date = new Date(violation.timestamp);
       const hours = date.getHours().toString().padStart(2, "0");
       const minutes = date.getMinutes().toString().padStart(2, "0");
       const seconds = date.getSeconds().toString().padStart(2, "0");
-      tableBody.innerHTML = `
-        <td>${hours}:${minutes}:${seconds}</td>
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      tableBody1.innerHTML = `
+      <tr>
         <td>${violation.firstName} ${violation.lastName}</td>
         <td>${violation.phoneNumber}</td>
         <td>${violation.email}</td>
+      </tr>
+      `;
+
+      tableBody2.innerHTML = `
+      <tr>
+        <td>${day}/${month}/${year}</td>
+        <td>${hours}:${minutes}:${seconds}</td>
         <td>${Math.round(violation.distance / 1000)}m</td>
+      </tr>
       `;
     });
 }

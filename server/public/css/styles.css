@@ -23,6 +23,10 @@ header {
   text-align: center;
 }
 
+table {
+  table-layout: fixed; /* or any other desired width */
+}
+
 /* Table headings */
 th {
   font-family: "Outfit", sans-serif;
@@ -38,6 +42,21 @@ td {
   color: white;
   padding: 0 10px;
   text-align: center;
+  white-space: nowrap;
+}
+
+.table1-container {
+  min-width: 500px;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.table1-container table {
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 /* Main container */
