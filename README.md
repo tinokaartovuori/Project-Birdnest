@@ -8,10 +8,10 @@ My implementation of the Web Application was built using a Node.js server with t
 
 Here are a few areas in which the implementation of the web application could be improved:
 
-Enhancing the user interface and adding a map visualization of the drone positions and the no-drone zone would improve the usability and functionality of the application.
-Optimizing the use of HTTP requests and possibly implementing caching or data persistence techniques would improve the performance of the web application.
-Incorporating a more robust database, such as Firebase, would provide more reliable data storage and management capabilities.
-Adding additional functionality to the front-end, such as the ability to filter pilot information or display the violating drone positions on a map, would enhance the user experience.
-Implementing user authentication and authorization would ensure that only authorized users have access to the sensitive information displayed on the web application.
-Adding error handling to the web application would ensure that it is robust and can handle unexpected errors gracefully.
-Implementing unit and integration tests would ensure that the web application is working as expected and would catch any potential bugs or issues before deployment.
+- Enhancing the user interface and adding a map visualization of the drone positions and the no-drone zone would improve the usability and functionality of the application.
+- Optimizing the use of HTTP requests and possibly implementing caching or data persistence techniques would improve the performance of the web application.
+- Incorporating a more robust database, such as Firebase, would provide more reliable data storage and management capabilities.
+- Adding additional functionality to the front-end, such as the ability to filter pilot information or display the violating drone positions on a map, would enhance the user experience.
+- Implementing user authentication and authorization would ensure that only authorized users have access to the sensitive information displayed on the web application.
+- Adding error handling to the web application would ensure that it is robust and can handle unexpected errors gracefully.
+- Implementing unit and integration tests would ensure that the web application is working as expected and would catch any potential bugs or issues before deployment.
