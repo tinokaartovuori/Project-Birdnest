@@ -1,4 +1,4 @@
-A solution for Reaktor Groups job application.
+A solution to Reaktor Group's job application
 
 Here is the Web Application running: https://the-project-birdnest.onrender.com/
 
