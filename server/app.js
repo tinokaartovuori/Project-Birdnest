@@ -5,7 +5,7 @@ import droneDataRoute from "./routes/droneData.route.js";
 import pilotDataRoute from "./routes/pilotData.route.js";
 import violationDataRoute from "./routes/violationData.route.js";
 import { fileURLToPath } from "url";
-import droneControl from "./droneControl.js";
+import backgroundProcess from "./backgroundProcess.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
   });
 });
 
-// Starting the main app (Interval)
-droneControl.startInterval();
+// Starting the background progess (Interval)
+backgroundProcess.startInterval();
 
 export default app;

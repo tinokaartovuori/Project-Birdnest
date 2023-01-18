@@ -1,9 +1,9 @@
+const BASE_URL = "http://localhost:3001";
+/* const BASE_URL = "https://the-project-birdnest.onrender.com" */
+
 function updateViolationsTable() {
   // Make a GET request to the API endpoint
-  fetch(
-    "https://the-project-birdnest.onrender.com/api/violation_data/get_drone_violations"
-    /* "http://localhost:3001/api/violation_data/get_drone_violations" */
-  )
+  fetch(BASE_URL + "/api/violation_data/get_drone_violations")
     .then((response) => response.json())
     .then((data) => {
       let violations = data;
@@ -38,10 +38,7 @@ function updateViolationsTable() {
 
 function updateClosestViolation() {
   // Make a GET request to the API endpoint
-  fetch(
-    "https://the-project-birdnest.onrender.com/api/violation_data/get_closest_violation"
-    /* "http://localhost:3001/api/violation_data/get_closest_violation" */
-  )
+  fetch(BASE_URL + "/api/violation_data/get_closest_violation")
     .then((response) => response.json())
     .then((data) => {
       let violation = data;
