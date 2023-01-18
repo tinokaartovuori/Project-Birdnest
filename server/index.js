@@ -1,5 +1,5 @@
-import http from "http"; // Import the http module
-import app from "./app.js"; // Import the app.js module
+import http from 'http'; // Import the http module
+import app from './app.js'; // Import the app.js module
 
 const server = http.createServer(app); // Create an HTTP server using the app as the request handler
 

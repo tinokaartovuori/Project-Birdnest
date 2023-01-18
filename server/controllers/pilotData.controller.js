@@ -1,5 +1,5 @@
-import responseUtils from "../utils/responseUtils.js"; // Import the response utility functions
-import pilotAPI from "../utils/pilotAPI.js"; // Import the pilot API utility functions
+import responseUtils from '../utils/responseUtils.js'; // Import the response utility functions
+import pilotAPI from '../utils/pilotAPI.js'; // Import the pilot API utility functions
 
 const controllerFunctions = {
   // This function sends a request to the pilotAPI to get pilot data for the specified serial number

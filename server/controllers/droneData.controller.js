@@ -1,5 +1,5 @@
-import responseUtils from "../utils/responseUtils.js";
-import droneAPI from "../utils/droneAPI.js";
+import responseUtils from '../utils/responseUtils.js';
+import droneAPI from '../utils/droneAPI.js';
 
 const controllerFunctions = {
   // This function sends a request to the droneAPI to get a list of drones

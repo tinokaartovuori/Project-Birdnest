@@ -2,7 +2,7 @@ const responseUtils = {
   // Authorization required
   basicAuthChallenge: (response) => {
     response.writeHead(401, {
-      "WWW-Authenticate": "Basic",
+      'WWW-Authenticate': 'Basic',
     });
     return response.end();
   },
@@ -10,7 +10,7 @@ const responseUtils = {
   // Sending the requested content for the user
   sendJson: (response, payload, code = 200) => {
     response.writeHead(code, {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     });
     return response.end(JSON.stringify(payload));
   },
@@ -44,7 +44,7 @@ const responseUtils = {
   // No permit for the user
   unauthorized: (response) => {
     response.writeHead(401, {
-      "WWW-Authenticate": "Basic",
+      'WWW-Authenticate': 'Basic',
     });
     return response.end();
   },

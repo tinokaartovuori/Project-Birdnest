@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 
 // This object contains a single function for fetching pilot data from a remote API
 const pilotAPI = {
@@ -8,12 +8,9 @@ const pilotAPI = {
   getPilot: async (serial_number) => {
     try {
       // Make the GET request to the API
-      let response = await fetch(
-        "https://assignments.reaktor.com/birdnest/pilots/" + serial_number,
-        {
-          method: "GET",
-        }
-      );
+      let response = await fetch('https://assignments.reaktor.com/birdnest/pilots/' + serial_number, {
+        method: 'GET',
+      });
 
       // If the request was successful, parse the response as JSON and return it
       if (response.ok) {
@@ -22,7 +19,7 @@ const pilotAPI = {
       }
       // If the request was not successful, throw an error
       else {
-        throw new Error("Invalid serial number");
+        throw new Error('Invalid serial number');
       }
     } catch (error) {
       // If there is an error making the request or parsing the response, catch it and return an object with the error message

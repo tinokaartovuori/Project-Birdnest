@@ -1,8 +1,8 @@
-import express from "express";
-import controllerFunctions from "../controllers/droneData.controller.js";
+import express from 'express';
+import controllerFunctions from '../controllers/droneData.controller.js';
 
 const router = express.Router();
 
-router.get("/get_drones", controllerFunctions.getDrones);
+router.get('/get_drones', controllerFunctions.getDrones);
 
 export default router;

@@ -1,15 +1,15 @@
+const BASE_URL = 'http://localhost:3001';
+/* const BASE_URL = "https://the-project-birdnest.onrender.com" */
+
 function updateViolationsTable() {
   // Make a GET request to the API endpoint
-  fetch(
-    "https://the-project-birdnest.onrender.com/api/violation_data/get_drone_violations"
-    /* "http://localhost:3001/api/violation_data/get_drone_violations" */
-  )
+  fetch(BASE_URL + '/api/violation_data/get_drone_violations')
     .then((response) => response.json())
     .then((data) => {
       let violations = data;
       // Clear the current contents of the table
-      const tableBody = document.querySelector("#table-body-violations");
-      tableBody.innerHTML = "";
+      const tableBody = document.querySelector('#table-body-violations');
+      tableBody.innerHTML = '';
 
       // Sort the violations by timestamp
       const sortedViolations = Object.entries(violations).sort((a, b) => {
@@ -20,11 +20,11 @@ function updateViolationsTable() {
 
       // Add the new data to the table
       sortedViolations.forEach((data) => {
-        const row = document.createElement("tr");
+        const row = document.createElement('tr');
         const date = new Date(data[1].timestamp);
-        const hours = date.getHours().toString().padStart(2, "0");
-        const minutes = date.getMinutes().toString().padStart(2, "0");
-        const seconds = date.getSeconds().toString().padStart(2, "0");
+        const hours = date.getHours().toString().padStart(2, '0');
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        const seconds = date.getSeconds().toString().padStart(2, '0');
         row.innerHTML = `
         <td>${hours}:${minutes}:${seconds}</td>
         <td>${data[1].firstName} ${data[1].lastName}</td>
@@ -38,20 +38,17 @@ function updateViolationsTable() {
 
 function updateClosestViolation() {
   // Make a GET request to the API endpoint
-  fetch(
-    "https://the-project-birdnest.onrender.com/api/violation_data/get_closest_violation"
-    /* "http://localhost:3001/api/violation_data/get_closest_violation" */
-  )
+  fetch(BASE_URL + '/api/violation_data/get_closest_violation')
     .then((response) => response.json())
     .then((data) => {
       let violation = data;
       // Clear the current contents of the table
-      const tableBody1 = document.querySelector("#table-body-closest1");
-      const tableBody2 = document.querySelector("#table-body-closest2");
+      const tableBody1 = document.querySelector('#table-body-closest1');
+      const tableBody2 = document.querySelector('#table-body-closest2');
       const date = new Date(violation.timestamp);
-      const hours = date.getHours().toString().padStart(2, "0");
-      const minutes = date.getMinutes().toString().padStart(2, "0");
-      const seconds = date.getSeconds().toString().padStart(2, "0");
+      const hours = date.getHours().toString().padStart(2, '0');
+      const minutes = date.getMinutes().toString().padStart(2, '0');
+      const seconds = date.getSeconds().toString().padStart(2, '0');
       const year = date.getFullYear();
       const month = date.getMonth() + 1;
       const day = date.getDate();
