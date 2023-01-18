@@ -1,6 +1,6 @@
-import droneAPI from "./droneAPI.js";
-import pilotAPI from "./pilotAPI.js";
-import * as dataUtils from "./dataUtils.js";
+import droneAPI from './droneAPI.js';
+import pilotAPI from './pilotAPI.js';
+import * as dataUtils from './dataUtils.js';
 
 // Some constants for the task
 const ORIGIN = { x: 250000, y: 250000 };
@@ -81,11 +81,11 @@ async function addPilotData(drones) {
     else {
       drones_with_pilot.push({
         ...drone,
-        pilotId: "Unknown",
-        firstName: "Unknown",
-        lastName: "Unknown",
-        phoneNumber: "Unknown",
-        email: "Unknown",
+        pilotId: 'Unknown',
+        firstName: 'Unknown',
+        lastName: 'Unknown',
+        phoneNumber: 'Unknown',
+        email: 'Unknown',
       });
     }
   }
@@ -94,23 +94,18 @@ async function addPilotData(drones) {
 
 // Updates the violation information to "the database"
 async function updateViolations(drones) {
-  const drones_violating = await getDronesInCircle(
-    drones,
-    ORIGIN.x,
-    ORIGIN.y,
-    DISTANCE
-  );
+  const drones_violating = await getDronesInCircle(drones, ORIGIN.x, ORIGIN.y, DISTANCE);
   // Get the data of the drone that was closest to the nest
   let current_closest = await dataUtils.getClosestViolation();
 
   for (let drone of drones_violating) {
     // Add new violation to "the database".
     await dataUtils.addDroneViolation(drone);
-    console.log("Adding new violation " + drone.pilotId);
+    console.log('Adding new violation ' + drone.pilotId);
 
     // Check if any of the drones are closest ever to the nest
     if (current_closest.distance > drone.distance) {
-      console.log("New closest violation " + drone.pilotId);
+      console.log('New closest violation ' + drone.pilotId);
       dataUtils.setClosestViolation(drone);
     }
   }
@@ -123,15 +118,12 @@ async function removeOldViolations() {
   let currently_violated_drones = await dataUtils.getDroneViolations();
 
   // Keep cases older than 10 minutes
-  let old_violations = filterOldViolations(
-    currently_violated_drones,
-    EXPIRATION_DURATION_MS
-  );
+  let old_violations = filterOldViolations(currently_violated_drones, EXPIRATION_DURATION_MS);
 
   // Remove cases older than 10 minutes from "the database"
   if (old_violations.length <= 0) return;
   for (const pilotId in old_violations) {
-    console.log("Removing old violation " + pilotId);
+    console.log('Removing old violation ' + pilotId);
     await dataUtils.removeDroneViolation(pilotId);
     return;
   }

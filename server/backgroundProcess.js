@@ -1,4 +1,4 @@
-import { runDroneProcess } from "./utils/droneUtils.js";
+import { runDroneProcess } from './utils/droneUtils.js';
 
 const backgroundProcess = {
   // This function starts an interval that calls the mainInterval function every 2 seconds

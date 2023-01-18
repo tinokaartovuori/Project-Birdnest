@@ -1,5 +1,5 @@
-import responseUtils from "../utils/responseUtils.js";
-import * as firebaseUtils from "../utils/dataUtils.js";
+import responseUtils from '../utils/responseUtils.js';
+import * as firebaseUtils from '../utils/dataUtils.js';
 
 const controllerFunctions = {
   // This function gets a serial number from the request parameters and sends a request to the pilotAPI to get the corresponding pilot data

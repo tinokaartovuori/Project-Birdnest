@@ -2,23 +2,23 @@
 // It was originally designed to work with Firebase, but it has been simplified to be more generic.
 // It can be easily adapted to work with any database management system.
 
-import fs from "fs";
+import fs from 'fs';
 
-const DRONE_VIOLATIONS_FILE_PATH = "./server/data/droneViolations.json";
-const CLOSEST_VIOLATION_FILE_PATH = "./server/data/closestViolation.json";
+const DRONE_VIOLATIONS_FILE_PATH = './server/data/droneViolations.json';
+const CLOSEST_VIOLATION_FILE_PATH = './server/data/closestViolation.json';
 
 // Function to set the closest violation data to the closestViolation.json file
 export async function setClosestViolation(data) {
   // Set the file data to the closest_violation parameter
   let new_data = {
-    distance: data.distance || "",
-    serial: data.serial || "",
-    timestamp: data.timestamp || "",
-    pilotId: data.pilotId || "",
-    firstName: data.firstName || "",
-    lastName: data.lastName || "",
-    phoneNumber: data.phoneNumber || "",
-    email: data.email || "",
+    distance: data.distance || '',
+    serial: data.serial || '',
+    timestamp: data.timestamp || '',
+    pilotId: data.pilotId || '',
+    firstName: data.firstName || '',
+    lastName: data.lastName || '',
+    phoneNumber: data.phoneNumber || '',
+    email: data.email || '',
   };
   const fileData = new_data;
   // Write the data to the file
