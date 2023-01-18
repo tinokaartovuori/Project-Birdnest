@@ -1,5 +1,5 @@
-const BASE_URL = 'http://localhost:3001';
-/* const BASE_URL = "https://the-project-birdnest.onrender.com" */
+const BASE_URL = /* 'http://localhost:3001'; */
+const BASE_URL = 'https://the-project-birdnest.onrender.com'
 
 function updateViolationsTable() {
   // Make a GET request to the API endpoint
